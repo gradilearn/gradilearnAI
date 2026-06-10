@@ -1,0 +1,376 @@
+/* ==================================================
+   NIHONGO PARTNER AI
+   STYLE.CSS
+================================================== */
+
+:root {
+    --primary: #005BAC;
+    --primary-dark: #004488;
+
+    --background: #F5F7FA;
+    --card: #FFFFFF;
+
+    --text: #333333;
+    --border: #E5E7EB;
+
+    --ai-bubble: #EAF4FF;
+    --user-bubble: #005BAC;
+
+    --shadow:
+        0 4px 12px rgba(0,0,0,0.08);
+
+    --radius: 16px;
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+/* ==================================================
+   BODY
+================================================== */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin-top: 6px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ==================================================
+   STATUS
+================================================== */
+
+.status-card {
+    margin: 12px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* ==================================================
+   CHAT AREA
+================================================== */
+
+.chat-container {
+    flex: 1;
+
+    padding: 16px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ==================================================
+   MESSAGE
+================================================== */
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+}
+
+.message.ai {
+    align-self: flex-start;
+}
+
+.message.user {
+    align-self: flex-end;
+}
+
+.sender {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    color: #666;
+}
+
+/* ==================================================
+   BUBBLE
+================================================== */
+
+.bubble {
+    padding: 12px 14px;
+    border-radius: 18px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.ai .bubble {
+    background: var(--ai-bubble);
+    color: var(--text);
+
+    border-top-left-radius: 4px;
+}
+
+.user .bubble {
+    background: var(--user-bubble);
+    color: white;
+
+    border-top-right-radius: 4px;
+}
+
+/* ==================================================
+   MIC SECTION
+================================================== */
+
+.mic-section {
+    text-align: center;
+    padding: 15px;
+}
+
+.mic-button {
+    width: 110px;
+    height: 110px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 3rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(0,91,172,0.3);
+
+    transition: 0.2s;
+}
+
+.mic-button:hover {
+    transform: scale(1.05);
+}
+
+.mic-button:active {
+    transform: scale(0.95);
+}
+
+.mic-label {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ==================================================
+   ACTION BUTTONS
+================================================== */
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+
+    padding: 0 15px 15px;
+}
+
+.secondary-btn {
+    flex: 1;
+
+    border: none;
+    cursor: pointer;
+
+    background: white;
+    color: var(--primary);
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    font-weight: 600;
+
+    box-shadow: var(--shadow);
+}
+
+.secondary-btn:hover {
+    background: #f0f6ff;
+}
+
+/* ==================================================
+   MANUAL INPUT
+================================================== */
+
+.manual-input {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 15px;
+}
+
+.manual-input textarea {
+    min-height: 90px;
+
+    resize: vertical;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 12px;
+
+    font-size: 1rem;
+}
+
+.manual-input textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.send-btn {
+    border: none;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* ==================================================
+   LOADING
+================================================== */
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+
+    background:
+        rgba(255,255,255,0.85);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+
+    border: 5px solid #ddd;
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 768px) {
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .mic-button {
+        width: 95px;
+        height: 95px;
+        font-size: 2.5rem;
+    }
+
+    .message {
+        max-width: 92%;
+    }
+
+}
+
+/* ==================================================
+   SCROLLBAR
+================================================== */
+
+.chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}

@@ -1,0 +1,5 @@
+const CONFIG = {
+    GEMINI_API_KEY: "YOUR_API_KEY_HERE",
+    GEMINI_MODEL: "gemini-2.5-flash",
+    APP_NAME: "Nihongo Partner AI"
+};

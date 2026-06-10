@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nihongo Partner AI</title>
+
+    <meta
+        name="theme-color"
+        content="#005BAC"
+    >
+
+    <meta
+        name="description"
+        content="Latihan Percakapan Bahasa Jepang N4-N3 dengan AI"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <link
+        rel="icon"
+        href="assets/icon-192.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <img
+            src="assets/logo.png"
+            alt="Logo"
+            class="logo"
+        >
+
+        <h1>Nihongo Partner AI</h1>
+
+        <p class="subtitle">
+            Latihan Percakapan Bahasa Jepang N4–N3
+        </p>
+    </header>
+
+    <!-- STATUS -->
+    <section class="status-card">
+        <span id="statusText">
+            Siap
+        </span>
+    </section>
+
+    <!-- CHAT -->
+    <main
+        id="chatContainer"
+        class="chat-container"
+    >
+
+        <div class="message ai">
+            <div class="sender">
+                AI
+            </div>
+
+            <div class="bubble">
+                こんにちは。日本語を練習しましょう。
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MIC -->
+    <section class="mic-section">
+
+        <button
+            id="micButton"
+            class="mic-button"
+        >
+            🎤
+        </button>
+
+        <p class="mic-label">
+            Tekan untuk Berbicara
+        </p>
+
+    </section>
+
+    <!-- ACTION BUTTONS -->
+    <section class="action-buttons">
+
+        <button
+            id="clearChatBtn"
+            class="secondary-btn"
+        >
+            Bersihkan Percakapan
+        </button>
+
+        <button
+            id="repeatBtn"
+            class="secondary-btn"
+        >
+            Ulangi Suara AI
+        </button>
+
+    </section>
+
+    <!-- INPUT CADANGAN -->
+    <section class="manual-input">
+
+        <textarea
+            id="manualMessage"
+            placeholder="Ketik bahasa Jepang di sini..."
+        ></textarea>
+
+        <button
+            id="sendBtn"
+            class="send-btn"
+        >
+            Kirim
+        </button>
+
+    </section>
+
+    <!-- LOADING -->
+    <div
+        id="loadingOverlay"
+        class="loading-overlay hidden"
+    >
+        <div class="spinner"></div>
+        <p>Memproses...</p>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
